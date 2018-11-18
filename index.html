@@ -1,70 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>page2</title>
-	<link rel="stylesheet" href="css/Styles.css">
-	<script type="text/javascript" src="scripts/jquery.js"></script>
-	<script type="text/javascript" src="scripts/js.js"></script>
-</head>
-<body>
-	<header class="header">
-		<div class="container">
-			<img src="img/logo.png" class="header__logo" alt="Лого">
-			<div class="header__contact-info">
-				<img src="img/icons/SHA_icon.png" alt="Иконка">
-				<p>1-800-674-3180</p>
-			</div>
-			
-		</div>
-	</header>
-	<section class="card">
-		<article class="card__article">
-			<div class="article__head">
-				<div class="article__head__preinfo"><p>Florida (FLL)<img src="img/icons/aircraft_icon.png" alt="">Paris (SMG)</p></div>
-				<div class="article__head__offer">
-					<p class="article__head__offer-title"><span>UNITED</span> STATES</p>
-					<div class="for_discount">
-						<p class="old-price">$915</p>
-						<div class="discount"><p>60% Off</p></div>
-					</div>
-				</div>
-				<div class="article__head__price">
-					<p class="article__head__price_title">Honolulu</p>
-					<p class="article__head__price_price">$197</p>
-				</div>
-			</div>
-			<img class="article__image" src="img/article.png"></img>
-		</article>
-		<div class="main-content">
-			<div class="main-content__title">
-				<h1>Sign up for cheap flight deals!</h1>
-				<h2>Save $300 or more per ticket</h2>
-			</div>
-			<div class="main-content__form">
-				
-				<input type="text" class="email-input" name="Email" placeholder="Enter Email Address">
-				<div class="button"><p>SIGN UP</p><div class="button__for_icon"><img src="img/icons/button.png" alt=""></div></div>
-				
-			</div>
-		</div>
-		<div class = "card__footer">
-			<div class="card__footer__head" z-index="-1">
-				<div class="footer_container">
-					<div class="footer__head_emblems">
-						<div class="head__item"><img src="img/footer_image1.png" alt="Эмблема"></div>
-						<div class="head__item"><img src="img/footer_image2.png" alt="Эмблема"></div>
-						<div class="head__item"><img src="img/footer_image3.png" alt="Эмблема"></div>
-					</div>
-				</div>
-			</div>
-			<div class="footer_container">
-				<div class="footer__info">
-					<img src="img/icons/footer_icon.png" alt="Эмблема"><p>Join over 312,412 Members</p>
-				</div>
-			</div>
-		</div>
-	</section>
+<html>
+  <head>
+    <title>FindTrail</title>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    	<head>
+    		<div class="inputs">
+    			<input type="number" name="input_height" class='inputs__input_height' placeholder="Height" max='15'>
+    			<input type="number" name="input_width" class='inputs__input_width' placeholder="Width" max='15'>
+    		</div>
+    		<input type="submit" name="create" class='btn_create' value="Create">
+    	</head>
+    	<div class="osnov hidden">
+    		<nav class = "">
+    			<p>Walls</p>
+    			<div class="nav__walls_btns_container">
+    				<div class="nav__btn_walls_add"><i class="fas fa-plus-square"></i></div>
 
-</body>
+    				<div class="nav__btn_walls_remove"><i class="fas fa-minus-square"></i></div>
+    			</div>
+    			<p>Player</p>
+    			<div class="nav__player_container">
+    				<div class="nav__btn_player"><i class="fas fa-male"></i></div>
+    			</div>
+    			<p>Finish</p>
+    			<div class="nav__finish_container">
+    				<div class="nav__btn_finish"><i class="far fa-flag"></i></div>
+    			</div>
+    		</nav>
+    		<div class="osnov__wrapper">
+    		</div>
+    	</div>
+      <input type="button" value="Find!" name="btn_find" class="btn_find hidden">
+    </div>
+  <script type="text/javascript" src="main.js"></script></body>
 </html>
