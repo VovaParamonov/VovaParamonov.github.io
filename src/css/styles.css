@@ -1,9 +1,9 @@
 *{
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'Comfortaa', cursive;
 }
 
 h1 {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Comfortaa', cursive;
     letter-spacing: 10px;
 }
 body{
@@ -22,6 +22,7 @@ body{
     height: 100vh;
 }
 .time{
+    font-weight: bold;
     box-shadow: 0px 0px 60px #3577db;
     transition: all 0.8s;
     transform: rotateY(180deg);
@@ -41,10 +42,11 @@ body{
 }
 
 .front {
-    box-shadow: 0px 0px 60px #3577db;
+    text-shadow: 1px 1px 2px white;
+    box-shadow:0px 0px 60px #3577db;
     color: #fff;
     width: 100%;
-    font-size: 2vw;
+    font-size: 1.5vw;
     min-width: 50%;
     height: 15vw;
     border-radius: 10px;
@@ -75,14 +77,19 @@ body{
     left: 7%;
     text-align: center;
 }
-.time span{
+.time .wrap{
     display: block;
     padding: 0 14px;
     font-size: 2vw;
 }
 
+.text {
+    text-shadow: 1px 1px 2px white;
+}
+
 .number {
     font-size: 5vw;
+    text-shadow: 0px 0px 40px white, 0px 0px 10px white, 1px 1px 2px white;;
 }
 
 .newsletter{
@@ -110,9 +117,10 @@ body{
 
     }
     .front {
-        font-size: 3vw;
+
+        font-size: 2.5vw;
     }
-    .time span{
+    .time .wrap{
         font-size: 3vw;
     }
 
