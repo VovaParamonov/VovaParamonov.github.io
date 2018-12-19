@@ -1,5 +1,10 @@
 var comingdate = new Date("Jan 1, 2019 00:00:00");
 
+AOS.init({
+    duration: 1200,
+})
+
+/*----------------------Time-----------------------------*/
 var d = $('#d');
 var h = $('#h');
 var m = $('#m');
@@ -26,3 +31,21 @@ function getTrueNumber(x) {
     if (x<10) return '0'+x;
     else return x;
 }
+//=====================================================================
+//-----------------------------convert------------------------------------
+
+
+$(function(){
+    var $convert = $('.convert');
+    var $letter = $('.convert__letter');
+    var $hat = $('.convert__hat');
+
+
+    $letter.on("mouseover", function(){
+        //alert("enter");
+    });
+
+    $('.convert__front').on("click", function(){
+        $('.convert__hat').addClass("convert__hat__closed");
+    });
+});
