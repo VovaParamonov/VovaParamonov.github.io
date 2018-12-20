@@ -39,13 +39,29 @@ $(function(){
     var $convert = $('.convert');
     var $letter = $('.convert__letter');
     var $hat = $('.convert__hat');
+    var $conv_button = $(".convert__button");
 
 
     $letter.on("mouseover", function(){
         //alert("enter");
     });
 
-    $('.convert__front').on("click", function(){
-        $('.convert__hat').addClass("convert__hat__closed");
+    $conv_button.on("click", function(){
+        $conv_button.hide(150);
+        $letter.addClass("convert__letter_closed");
+        $hat.toggleClass("convert__hat_closed");
+        $convert.css({"animation":"send 3s"});
+        setTimeout(function(){
+            $convert.css({"display":"none"});
+            $(".section h2").slideUp(200, function(){
+                $(".section h2").text("Письмо в пути!");
+                $(".section h2").slideDown(200);
+            });
+        },1500);
     });
+
+    $convert.delegate("img", "mouseover", function(){
+        $(".convert__letter textarea").focus()
+    })
+
 });
