@@ -88,6 +88,9 @@ body{
 .pos:hover .front{
     -webkit-transform: rotateY(-180deg);
 }
+
+
+
 .pos{
     position: absolute;
     top: 15%;

@@ -46,6 +46,15 @@ $(function(){
         //alert("enter");
     });
 
+    $('.front').on("touchstart", function (){
+        $(".time").css({"transform":"rotateY(0deg)"});
+        $(".front").css({"transform" :"rotateY(-180deg)"});
+    });
+    $('.time').on("touchstart", function (){
+        $(".time").css({"transform":"rotateY(180deg)"});
+        $(".front").css({"transform" :"rotateY(0deg)"});
+    });
+
     $conv_button.on("click", function(){
         $conv_button.hide(150);
         $letter.addClass("convert__letter_closed");
