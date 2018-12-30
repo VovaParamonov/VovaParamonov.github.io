@@ -12,6 +12,7 @@ var s = $('#s');
 
 var x = setInterval(function(){
     var now = new Date();
+    //var des = 0;
     var des = comingdate.getTime() - now.getTime();
     var days = Math.floor(des/(1000 * 60 * 60 * 24));
     var hours = Math.floor(des%(1000 * 60 * 60 * 24) / (1000 * 60 *60));
@@ -23,7 +24,14 @@ var x = setInterval(function(){
     m.text(getTrueNumber(mins));
     s.text(getTrueNumber(secs));
 
-    if(des <= 0) clearInterval(x);
+    if(des <= 0) {
+        $('.front h1').text("Новый год наступил!");
+        $('.time').html('<h1>Время начать новую жизнь</h1>');
+        $('.section').html('');
+        $('.section').css({"height":"0"});
+        alert("С новым 2019 годом! Спасибо, что ты здесь в этот момент :D");
+        clearInterval(x);
+    }
 
 },1000);
 
