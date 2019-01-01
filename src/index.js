@@ -313,9 +313,7 @@ window.addEventListener("load", function(){
 
 $(document).keydown(function(eventObject){
     if (eventObject.which == '37'){
-        game.objects.platform.speed_now = -5 ;
-        if (game.objects.platform.x <= 2){
-        }
+        game.objects.platform.speed_now = -5;
     } else if (eventObject.which == '39' ) {
         game.objects.platform.speed_now = 5;
     } else if (eventObject.which == '32'){
@@ -352,4 +350,22 @@ $('canvas').click(function(eventObj){
             console.log(id);
         }
     }
+});
+$('.Left').on("touchstart", function(){
+    game.objects.platform.speed_now = -5;
+    if (game.objects.platform.ball){
+        game.objects.platform.dropBall();
+    }
+});
+$('.Left').on("touchend", function(){
+    game.objects.platform.speed_now = 0;
+});
+$('.Right').on("touchstart", function(){
+    game.objects.platform.speed_now = 5;
+    if (game.objects.platform.ball){
+        game.objects.platform.dropBall();
+    }
+});
+$('.Right').on("touchend", function(){
+    game.objects.platform.speed_now = 0;
 });
