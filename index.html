@@ -2,19 +2,405 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="src/css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="src/index.js"></script>
-    <title>Game</title>
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        div {
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000;
+            outline-style: none;
+        }
+
+        h1 {
+            font-size: 54px;
+            color: rgb(38, 38, 38);
+            font-weight: bold;
+        }
+        a:hover{
+            color: rgb(252, 85, 124);
+            border-bottom: 1px solid rgb(252, 85, 124);
+        }
+
+
+
+        .container {
+            height: 100%;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        .container-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header  {
+            background-color: #fbfbfb;
+            height: 10vh;
+        }
+
+        nav {
+            height: 100%;
+            width: 30%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            color: rgb(31, 31, 36);
+            line-height: 23px;
+
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #f82370;
+            background-color: #ff4e2e;
+            height: 60px;
+            width: 270px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        header button {
+            background-color: inherit;
+            height: 40px;
+            width: 200px;
+            color: rgb(245, 63, 79);
+            transition: all 0.3s;
+        }
+        header button:hover {
+            background-color: #f53f4f;
+            color: whitesmoke;
+        }
+        .number {
+            display: block;
+            font-size: 20px;
+            color: rgb(31, 31, 36);
+            line-height: 2.16;
+            white-space: nowrap
+
+        }
+
+        .header__contacts {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .container-title {
+            position: relative;
+        }
+
+        .section-title {
+            background-color: #fbfbfb;
+            height: 90vh;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .container-title h1 {
+            position: absolute;
+            top: 30%;
+            font-size: 80px;
+            color: rgb(31, 31, 36);
+            font-weight: bold;
+            line-height: 1.308;
+            white-space: nowrap;
+        }
+        .container-title p {
+            font-size: 25px;
+            color: rgb(137, 147, 173);
+            line-height: 2.16;
+            position: absolute;
+            top: 45%;
+        }
+
+        .container-title button {
+            position: absolute;
+            top: 55%;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px #f53f4f;
+        }
+
+        .peoplePNG {
+            position: absolute;
+            bottom: 0;
+            right: -200px;
+            display: block;
+            height: 90vh;
+        }
+        .section-about {
+            padding: 105px 0;
+        }
+
+        section h1{
+            text-align: center;
+        }
+
+        section button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 100px 0;
+        }
+
+
+        .content__item {
+            width: 260px;
+        }
+
+        .content img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
+            color: rgb(137, 147, 173);
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .section-examples {
+            background-color: #fbfbfb;
+            padding: 100px 0;
+
+        }
+
+        .examples__content img {
+            width: 270px;
+        }
+
+        .section-offer {
+            background-color: #ff4e2e;
+            padding: 100px 0;
+            padding-left: 100px;
+        }
+
+        .container-offer h1 {
+            word-spacing: 12px;
+            font-size: 45px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            line-height: 1.333;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .container-offer p {
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .contact-content {
+            margin: 90px 0;
+        }
+
+        .content__item  {
+            font-size: 18px;
+            color: rgb(137, 147, 173);
+            line-height: 2;
+        }
+
+        .content__item button{
+            background-color: inherit;
+            height: 40px;
+            width: 247px;
+            color: rgb(245, 63, 79);
+            transition: all 0.3s;
+            float: left;
+        }
+
+        .item__contact {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .item__contact img {
+            float: left;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .content__item button:hover {
+            background-color: #f53f4f;
+            color: whitesmoke;
+        }
+
+        .item__icons {
+            opacity: 0.8;
+            margin-top: 60px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .content span:hover{
+            border-bottom: 1px solid rgb(137, 147, 173);
+            cursor: pointer;
+        }
+
+        .item__icons img{
+            cursor: pointer;
+            margin: 0;
+            margin-right: 30px;
+        }
+
+        .item__icons a:hover{
+            border-bottom: none;
+        }
+
+        footer {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: #31293c;
+            padding: 43px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <title>HomeWork</title>
 </head>
 <body>
-    <canvas id='canvas' width="640px" height="480px">Обновите браузер</canvas>
-    <div class="tapWrapper">
-        <div class="tap Left"></div><div class="tap Right"></div>
-    </div>
-    <script src="src/index.js" type="text/javascript"></script>
+
+        <header>
+            <div class="container container-header">
+                <nav>
+                    <a href="#">Услуги</a>
+                    <a href="#">Портфолио</a>
+                    <a href="#">Стоимость</a>
+                </nav>
+                <div class="header__contacts">
+                    <span class="number">+7 (499) 995-55-77</span>
+                    <button>Заказать звонок</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-title">
+            <div class="container container-title">
+                <img src="img/Dmitry.png"  class="peoplePNG">
+                <h1>Дмитрий Алексеев</h1>
+                <p>Frontend-разработчик и веб-верстальщик</p>
+                <button>Узнать больше</button>
+            </div>
+        </section>
+        <section class="section-about">
+            <div class="container container-about">
+                <h1>Что я делаю</h1>
+                <div class="about__content content">
+                    <div class="content__item">
+                        <img src="img/icons/content1.png" alt="">
+                        <p>Вёрстка лендинг–страниц
+                            и сайтов любой сложности</p>
+                    </div>
+                    <div class="content__item">
+                        <img src="img/icons/content2.png" alt="">
+                        <p>Адаптивная вёрстка под все
+                            браузеры и устройства</p>
+                    </div>
+                    <div class="content__item">
+                        <img src="img/icons/content3.png" alt="">
+                        <p>Frontend–разработка
+                            и программирование</p>
+                    </div>
+                    <div class="content__item">
+                        <img src="img/icons/content4.png" alt="">
+                        <p>Исправление и доработка
+                            существующей вёрстки</p>
+                    </div>
+                </div>
+                <button>Узнать стоимсоть</button>
+            </div>
+        </section>
+        <section class="section-examples">
+            <div class="container container-examples">
+                <h1>Примеры моих работ</h1>
+                <div class="examples__content content">
+                    <div class="examples__item"><img src="img/examples1.png" alt="">
+                        <p>Сайт психолога Веры Антоновой</p>
+                    </div>
+                    <div class="examples__item"><img src="img/examples2.png" alt="">
+                        <p>Сайт магазина детской одежды</p>
+                    </div>
+                    <div class="examples__item"><img src="img/examples3.png" alt="">
+                        <p>Сайт магазина детской одежды</p>
+                    </div>
+                </div>
+                <button>Заказать проект</button>
+            </div>
+        </section>
+        <section class="section-offer">
+            <div class="container container-offer" >
+                <h1>Адаптивная вёрстка под все устройства</br>
+                    и браузеры от 1000 рублей всего за 4 часа.*</h1>
+                <p>* Срок и стоимость могут отличаться от заявленных и рассчитываются  индивидуально,</br>
+                    в зависимости от сложности задач.</p>
+            </div>
+        </section>
+        <section class="section-contacts">
+            <div class="container container-contacts">
+                <div class="contact-content content">
+                    <div class="content__item"><div class="nav">
+                        <span>Услуги</span></br>
+                        <span>Партфолио</span></br>
+                        <span>Стоимость</span></br>
+                    </div></div>
+                    <div class="content__item">
+                        <div class="item__contact">
+                            <img src="img/icons/envelope.png" alt="" class="icon"><p>+7 (499) 995-77-55</p>
+                        </div>
+                        <div class="item__contact">
+                            <img src="img/icons/call-answer.png" alt="" class="icon"><p>dmitry@alekseev.com</p>
+                        </div>
+                    </div>
+                    <div class="content__item">
+                        <button>Заказать звонок</button>
+                        <div class="item__icons">
+                            <a href=""><img src="img/icons/vk.png" alt="" class="icons"></a>
+                            <a href=""><img src="img/icons/facebook.png" alt="" class="icons"></a>
+                            <a href=""><img src="img/icons/twitter.png" alt="" class="icons"></a>
+                            <a href=""><img src="img/icons/instagram.png" alt="" class="icons"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            © Дмитрий Алексеев, 2016 – 2018
+        </footer>
 </body>
 </html>
