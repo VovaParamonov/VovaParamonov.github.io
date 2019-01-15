@@ -169,18 +169,21 @@
         .content {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            align-items: center;
             margin: 100px 0;
+            flex-wrap: wrap;
         }
 
 
         .content__item {
-            width: 260px;
+            width: 240px;
         }
 
         .content img {
             display: block;
             margin: 0 auto;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -225,6 +228,7 @@
         }
 
         .contact-content {
+            flex-wrap: nowrap;
             margin: 90px 0;
         }
 
@@ -249,6 +253,7 @@
         }
 
         .item__contact img {
+            margin: 0;
             float: left;
             position: absolute;
             top: 50%;
@@ -290,6 +295,10 @@
             background-color: #31293c;
             padding: 43px 0;
         }
+
+
+
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <title>HomeWork</title>
