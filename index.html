@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="css/styles.css">-->
     <style>
         *{
@@ -297,16 +299,51 @@
             background-color: #31293c;
             padding: 43px 0;
         }
-
-        @media screen and (max-width: 500px) and (orientation: landscape) {
-            .container-title h1 {
-                top: 5%;
+        @media screen and (max-width: 800px) {
+            .container-header {
+                flex-direction: column;
             }
-            .container-title p{
-                top: 15%;
+            .header__contacts {
+                min-width: 100%;
+            }
+            nav {
+                width: 100%;
+            }
+            .container {
+                width: 90%;
+            }
+
+            .peoplePNG {
+                right: auto;
+                left: 5%;
+            }
+
+            .container-title button {
+                width: 40vmin;
+            }
+
+            .container-title h1 {
+                top: 10vh;
+                font-size: 10vmin;
+            }
+            .container-title p {
+                top: 12vh;
+                font-size: 3vmin;
+            }
+            .container-title button {
+                top: 25%;
+            }
+            .container-offer h1 {
+                word-spacing: 6px;
+                font-size: 5vmin;
+            }
+            .container-offer p {
+                font-size: 3vmin;
+            }
+            .section-offer {
+                padding-left: 10px;
             }
         }
-
 
     </style>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
