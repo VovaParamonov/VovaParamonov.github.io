@@ -308,6 +308,110 @@
             background-color: #31293c;
             padding: 43px 0;
         }
+
+        .popupWrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0,0,0, 0.7);
+            z-index: 2;
+            display: none;
+        }
+
+        .popupWindow {
+            padding: 40px;
+            width: 370px;
+            margin: 10vh auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .popupWindow h1 {
+
+            margin-bottom: 15px;
+            font-size: 26px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            line-height: 1.346;
+            text-align: center;
+        }
+
+
+        .popupWindow__form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .popupWindow__form input {
+            margin-bottom: 15px;
+            outline: none;
+            padding: 20px;
+            background-color: inherit;
+            border: 1.8px solid #dce0eb;
+            font-size: 18px;
+            color: rgb(137, 147, 173);
+        }
+        
+        .popupWindow__form input[type="checkbox"]{
+            display: none;
+        }
+        .popupWindow__form input[type="submit"]{
+            cursor: pointer;
+            border: 1px solid #f82370;
+            background-color: #ff4e2e;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .popupWindow__form input[type="submit"]:hover {
+            box-shadow: 0 0 10px #f53f4f;
+        }
+
+
+        .check_wrapper {
+            position: relative;
+        }
+
+        .popupWindow__form label{
+            display: block;
+            font-size: 13px;
+            color: rgb(137, 147, 173);
+            line-height: 1.538;
+            position: relative;
+            left: 30px;
+        }
+        .popupWindow__form label:before {
+            cursor: pointer;
+            position: absolute;
+            left: -10%;
+            content: '';
+            height: 15px;
+            width: 15px;
+            background-color: inherit;
+            border: 1.8px solid #dce0eb;
+            
+        }
+        input[type='checkbox']:checked + label:before {
+            border: 1.8px solid #ff4e2e;
+            background-image: url("img/icons/check.png");
+            background-size: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        ::-webkit-input-placeholder {color:#8993AD; opacity:1;}/* webkit */
+        ::-moz-placeholder          {color:#8993AD; opacity:1;}/* Firefox 19+ */
+        :-moz-placeholder           {color:#8993AD; opacity:1;}/* Firefox 18- */
+        :-ms-input-placeholder      {color:#8993AD; opacity:1;}/* IE */
+
+
         @media screen and (max-width: 830px) {
 
             header {
@@ -378,13 +482,43 @@
                 margin-bottom: 20px;
             }
         }
-
     </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $callButton = $('.callButton');
+            var $popupWrapper = $('.popupWrapper');
+
+            $callButton.click(function () {
+                $popupWrapper.css({"display":"block"});
+            });
+
+            $popupWrapper.click(function (event) {
+                if (event.target == this) {
+                    $popupWrapper.css({"display":"none"})
+                }
+
+            });
+
+        })
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <title>HomeWork</title>
 </head>
 <body>
-
+    <div class="popupWrapper">
+        <div class="popupWindow">
+            <h1>Форма заявки</h1>
+            <div class="popupWindow__form">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Телефон">
+                <input type="submit" value="Заказать проект">
+                <div class="check_wrapper">
+                    <input type="checkbox" id="form__checkbox"><label for="form__checkbox">Я согласен с условиями обработки персональных данных</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
         <header>
             <div class="container container-header">
                 <nav>
@@ -394,7 +528,7 @@
                 </nav>
                 <div class="header__contacts">
                     <span class="number">+7 (499) 995-55-77</span>
-                    <button>Заказать звонок</button>
+                    <button class="callButton">Заказать звонок</button>
                 </div>
             </div>
         </header>
