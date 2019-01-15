@@ -101,6 +101,7 @@
         }
 
         .header__contacts {
+            min-width: 400px;
             width: 40%;
             display: flex;
             align-items: center;
@@ -110,6 +111,7 @@
 
         .container-title {
             position: relative;
+            min-width: 926px;
         }
 
         .section-title {
@@ -296,7 +298,14 @@
             padding: 43px 0;
         }
 
-
+        @media screen and (max-width: 500px) and (orientation: landscape) {
+            .container-title h1 {
+                top: 5%;
+            }
+            .container-title p{
+                top: 15%;
+            }
+        }
 
 
     </style>
