@@ -18,11 +18,17 @@ $(function(){
 	});
 
 	$search.focus(function(){
-		$logo.hide();
-		$(this).css({'width':'200px', "background-position":"94% 50%"});
+		if ($(this).css('width') == '45px'){
+			$logo.hide();
+			$(this).css({'width':'200px', "background-position":"94% 50%"});
+		}
+		
 	}).focusout(function(event) {
-		$(this).css({'width':'45px', "background-position":"center"});
-		$logo.show()
+		if ($(this).css('width') == '200px'){
+			$(this).css({'width':'45px', "background-position":"center"});
+			$logo.show();
+		}
+		
 	});
 
 	$menuButton.click(function(event) {
