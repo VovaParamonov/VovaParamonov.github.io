@@ -1,636 +1,208 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="css/styles.css">-->
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-
-        html,body {
-            overflow-x: hidden;
-        }
-
-        body {
-            font-size: 16px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        div {
-            box-sizing: border-box;
-        }
-
-        button,input[type="submit"]{
-            outline: none;
-        }
-
-        a{
-            text-decoration: none;
-            color: #000;
-            outline-style: none;
-        }
-
-        h1 {
-            font-size: 54px;
-            color: rgb(38, 38, 38);
-            font-weight: bold;
-        }
-        a:hover{
-            color: rgb(252, 85, 124);
-            border-bottom: 1px solid rgb(252, 85, 124);
-        }
-
-
-
-        .container {
-            height: 100%;
-            width: 75%;
-            margin: 0 auto;
-        }
-
-        .container-header{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        header  {
-            background-color: #fbfbfb;
-            height: 10vh;
-        }
-
-        nav {
-            height: 100%;
-            width: 30%;
-            float: left;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 16px;
-            color: rgb(31, 31, 36);
-            line-height: 23px;
-
-        }
-
-        button {
-            cursor: pointer;
-            border: 1px solid #f82370;
-            background-color: #ff4e2e;
-            height: 60px;
-            width: 270px;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        header button {
-            background-color: inherit;
-            height: 40px;
-            width: 200px;
-            color: rgb(245, 63, 79);
-            transition: all 0.3s;
-        }
-        header button:hover {
-            background-color: #f53f4f;
-            color: whitesmoke;
-        }
-        .number {
-            display: block;
-            font-size: 20px;
-            color: rgb(31, 31, 36);
-            line-height: 2.16;
-            white-space: nowrap
-
-        }
-
-        .header__contacts {
-            min-width: 400px;
-            width: 40%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .container-title {
-            position: relative;
-            min-width: 970px;
-        }
-
-        .section-title {
-            background-color: #fbfbfb;
-            height: 90vh;
-            width: 100vw;
-            overflow-x: hidden;
-        }
-
-        .container-title__label {
-            position: absolute;
-            top: 30%;
-            left: 10px;
-        }
-
-        .container-title h1 {
-            font-size: 80px;
-            color: rgb(31, 31, 36);
-            font-weight: bold;
-            line-height: 1.308;
-            white-space: nowrap;
-        }
-        .container-title p {
-            font-size: 25px;
-            color: rgb(137, 147, 173);
-            line-height: 2.16;
-        }
-
-        .container-title button {
-            margin: 0;
-            transition: all 0.2s;
-        }
-
-        button:hover {
-            box-shadow: 0 0 10px #f53f4f;
-        }
-
-        .peoplePNG {
-            position: absolute;
-            bottom: 0;
-            right: -200px;
-            display: block;
-            height: 90vh;
-        }
-        .section-about {
-            padding: 105px 0;
-        }
-
-        section h1{
-            text-align: center;
-        }
-
-        section button {
-            display: block;
-            margin: 0 auto;
-        }
-
-        .container-title__label h1{
-            text-align: left;
-        }
-
-        .content {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 100px 0;
-            flex-wrap: wrap;
-        }
-
-
-        .content__item {
-            width: 240px;
-        }
-
-        .content img {
-            display: block;
-            margin: 0 auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            font-size: 20px;
-            color: rgb(137, 147, 173);
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        .section-examples {
-            background-color: #fbfbfb;
-            padding: 100px 0;
-
-        }
-
-        .examples__content img {
-            width: 270px;
-        }
-
-        .section-offer {
-            background-color: #ff4e2e;
-            padding: 100px 0;
-            padding-left: 100px;
-        }
-
-        .container-offer h1 {
-            word-spacing: 12px;
-            font-size: 45px;
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-            line-height: 1.333;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .container-offer p {
-            font-size: 18px;
-            color: rgb(255, 255, 255);
-            line-height: 1.5;
-            text-align: left;
-        }
-
-        .contact-content {
-            margin: 60px 0;
-            flex-wrap: nowrap;
-        }
-
-        .content__item  {
-            font-size: 18px;
-            color: rgb(137, 147, 173);
-            line-height: 2;
-        }
-
-        .content__item button{
-            background-color: inherit;
-            height: 40px;
-            width: 247px;
-            color: rgb(245, 63, 79);
-            transition: all 0.3s;
-            float: left;
-        }
-
-        .item__contact {
-            position: relative;
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .item__contact img {
-            margin: 0;
-            float: left;
-            margin-right: 20px;
-            /*position: absolute;*/
-            /*top: 50%;*/
-            /*transform: translate(0, -50%);*/
-        }
-
-        .content__item button:hover {
-            background-color: #f53f4f;
-            color: whitesmoke;
-        }
-
-        .item__icons {
-            opacity: 0.8;
-            margin-top: 60px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-        }
-
-        .content span:hover{
-            border-bottom: 1px solid rgb(137, 147, 173);
-            cursor: pointer;
-        }
-
-        .item__icons img{
-            cursor: pointer;
-            margin: 0;
-            margin-right: 30px;
-        }
-
-        .item__icons a:hover{
-            border-bottom: none;
-        }
-
-        footer {
-            font-size: 16px;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            background-color: #31293c;
-            padding: 43px 0;
-        }
-
-        .popupWrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: rgba(0,0,0, 0.7);
-            z-index: 2;
-            display: none;
-        }
-
-        .popupWindow {
-            padding: 40px;
-            width: 370px;
-            margin: 10vh auto;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .popupWindow h1 {
-
-            margin-bottom: 15px;
-            font-size: 26px;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-            line-height: 1.346;
-            text-align: center;
-        }
-
-
-        .popupWindow__form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin: 0 auto;
-            height: 100%;
-            justify-content: space-between;
-        }
-
-        .popupWindow__form input {
-            margin-bottom: 15px;
-            outline: none;
-            padding: 20px;
-            background-color: inherit;
-            border: 1.8px solid #dce0eb;
-            font-size: 18px;
-            color: rgb(137, 147, 173);
-        }
-        
-        .popupWindow__form input[type="checkbox"]{
-            display: none;
-        }
-        .popupWindow__form input[type="submit"]{
-            cursor: pointer;
-            border: 1px solid #f82370;
-            background-color: #ff4e2e;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .popupWindow__form input[type="submit"]:hover {
-            box-shadow: 0 0 10px #f53f4f;
-        }
-
-
-        .check_wrapper {
-            position: relative;
-        }
-
-        .popupWindow__form label{
-            display: block;
-            font-size: 13px;
-            color: rgb(137, 147, 173);
-            line-height: 1.538;
-            position: relative;
-            left: 30px;
-        }
-        .popupWindow__form label:before {
-            cursor: pointer;
-            position: absolute;
-            left: -10%;
-            content: '';
-            height: 15px;
-            width: 15px;
-            background-color: inherit;
-            border: 1.8px solid #dce0eb;
-            
-        }
-        input[type='checkbox']:checked + label:before {
-            border: 1.8px solid #ff4e2e;
-            background-image: url("img/icons/check.png");
-            background-size: 70%;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        ::-webkit-input-placeholder {color:#8993AD; opacity:1;}/* webkit */
-        ::-moz-placeholder          {color:#8993AD; opacity:1;}/* Firefox 19+ */
-        :-moz-placeholder           {color:#8993AD; opacity:1;}/* Firefox 18- */
-        :-ms-input-placeholder      {color:#8993AD; opacity:1;}/* IE */
-
-
-        @media screen and (max-width: 830px) {
-
-            header {
-                height: 180px;
-            }
-            .container-header {
-                flex-direction: column;
-            }
-            .header__contacts {
-                min-width: 100%;
-                flex-direction: column;
-            }
-            nav {
-                width: 100%;
-            }
-            .container {
-                min-width: 0;
-                width: 90%;
-            }
-
-            section h1 {
-                font-size: 10vmin;
-            }
-
-            .peoplePNG {
-                right: 0;
-                left: 0;
-                height: 80%;
-                margin: 0 auto;
-                transform: translateX(8vw);
-            }
-
-            .container-title button {
-                position: static;
-                width: 40vmin;
-            }
-
-            .container-title h1 {
-                top: 10vh;
-                font-size: 10vmin;
-            }
-            .container-title p {
-                top: 17vh;
-                font-size: 3vmin;
-            }
-            .container-title button {
-                top: 25%;
-                margin: 0;
-            }
-            .container-offer h1 {
-                word-spacing: 6px;
-                font-size: 5vmin;
-            }
-            .container-offer p {
-                font-size: 3vmin;
-            }
-            .section-offer {
-                padding-left: 10px;
-            }
-            .container-title__label {
-                position: relative;
-                top: 40px;
-            }
-            .contact-content {
-                flex-direction: column;
-            }
-            .content__item {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            var $callButton = $('.callButton');
-            var $popupWrapper = $('.popupWrapper');
-
-            $callButton.click(function () {
-                $popupWrapper.css({"display":"block"});
-            });
-
-            $popupWrapper.click(function (event) {
-                if (event.target == this) {
-                    $popupWrapper.css({"display":"none"})
-                }
-
-            });
-
-        })
-    </script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <title>HomeWork</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Новостное агентство</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
-    <div class="popupWrapper">
-        <div class="popupWindow">
-            <h1>Форма заявки</h1>
-            <div class="popupWindow__form">
-                <input type="text" placeholder="Имя">
-                <input type="text" placeholder="Телефон">
-                <input type="submit" value="Заказать проект">
-                <div class="check_wrapper">
-                    <input type="checkbox" id="form__checkbox"><label for="form__checkbox">Я согласен с условиями обработки персональных данных</label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <header>
-            <div class="container container-header">
-                <nav>
-                    <a href="#">Услуги</a>
-                    <a href="#">Портфолио</a>
-                    <a href="#">Стоимость</a>
-                </nav>
-                <div class="header__contacts">
-                    <span class="number">+7 (499) 995-55-77</span>
-                    <button class="callButton">Заказать звонок</button>
-                </div>
-            </div>
-        </header>
-
-        <section class="section-title">
-            <div class="container container-title">
-                <img src="img/Dmitry.png"  class="peoplePNG">
-                <div class="container-title__label">
-                    <h1>Дмитрий Алексеев</h1>
-                    <p>Frontend-разработчик и веб-верстальщик</p>
-                    <button>Узнать больше</button>
-                </div>
-
-            </div>
-        </section>
-        <section class="section-about">
-            <div class="container container-about">
-                <h1>Что я делаю</h1>
-                <div class="about__content content">
-                    <div class="content__item">
-                        <img src="img/icons/content1.png" alt="">
-                        <p>Вёрстка лендинг–страниц
-                            и сайтов любой сложности</p>
-                    </div>
-                    <div class="content__item">
-                        <img src="img/icons/content2.png" alt="">
-                        <p>Адаптивная вёрстка под все
-                            браузеры и устройства</p>
-                    </div>
-                    <div class="content__item">
-                        <img src="img/icons/content3.png" alt="">
-                        <p>Frontend–разработка
-                            и программирование</p>
-                    </div>
-                    <div class="content__item">
-                        <img src="img/icons/content4.png" alt="">
-                        <p>Исправление и доработка
-                            существующей вёрстки</p>
-                    </div>
-                </div>
-                <button>Узнать стоимсоть</button>
-            </div>
-        </section>
-        <section class="section-examples">
-            <div class="container container-examples">
-                <h1>Примеры моих работ</h1>
-                <div class="examples__content content">
-                    <div class="examples__item"><img src="img/examples1.png" alt="">
-                        <p>Сайт психолога Веры Антоновой</p>
-                    </div>
-                    <div class="examples__item"><img src="img/examples2.png" alt="">
-                        <p>Сайт магазина детской одежды</p>
-                    </div>
-                    <div class="examples__item"><img src="img/examples3.png" alt="">
-                        <p>Сайт магазина детской одежды</p>
-                    </div>
-                </div>
-                <button>Заказать проект</button>
-            </div>
-        </section>
-        <section class="section-offer">
-            <div class="container container-offer" >
-                <h1>Адаптивная вёрстка под все устройства</br>
-                    и браузеры от 1000 рублей всего за 4 часа.*</h1>
-                <p>* Срок и стоимость могут отличаться от заявленных и рассчитываются  индивидуально,</br>
-                    в зависимости от сложности задач.</p>
-            </div>
-        </section>
-        <section class="section-contacts">
-            <div class="container container-contacts">
-                <div class="contact-content content">
-                    <div class="content__item"><div class="nav">
-                        <span>Услуги</span></br>
-                        <span>Партфолио</span></br>
-                        <span>Стоимость</span></br>
-                    </div></div>
-                    <div class="content__item">
-                        <div class="item__contact">
-                            <img src="img/icons/envelope.png" alt="" class="icon"><p>+7 (499) 995-77-55</p>
-                        </div>
-                        <div class="item__contact">
-                            <img src="img/icons/call-answer.png" alt="" class="icon"><p>dmitry@alekseev.com</p>
-                        </div>
-                    </div>
-                    <div class="content__item">
-                        <button>Заказать звонок</button>
-                        <div class="item__icons">
-                            <a href=""><img src="img/icons/vk.png" alt="" class="icons"></a>
-                            <a href=""><img src="img/icons/facebook.png" alt="" class="icons"></a>
-                            <a href=""><img src="img/icons/twitter.png" alt="" class="icons"></a>
-                            <a href=""><img src="img/icons/instagram.png" alt="" class="icons"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            © Дмитрий Алексеев, 2016 – 2018
-        </footer>
+	<div id="black-bar">
+		<div class="fixed-container">
+			Самые <a href="#">свежие новости</a> в реальном времени
+			<div id="datetime">12:30 19.06.2019</div>
+		</div>
+	</div>
+	<header id="header">
+		<div class="fixed-container flex-container header-container">
+			<a href="#" class="menu-button"></a>
+			<img id="logo" src="img/logo.png" alt="Логотип">
+			<div class="cityWrapper"><a href="#" class="city"> Москва</a></div>
+			<div class="dateHead">
+				<span class="news_date">19 июня 2019 года</span>
+			</div>
+			<div class="news-time">10:45</div>
+			<div class="wether">
+				<!-- <img src="img/cloud.png" alt="Облако" id="wetherIcon"> -->
+				<span id="gradient">+22 <sup><small>o</small></sup>C</span>
+			</div>
+			<input class="search" type="search" placeholder="Поиск по сайту">
+		</div>
+	</header>
+	<div class="menu-container">
+		<div class="fixed-container">
+			<nav>
+				<a href="#">Главная</a><span>/</span>           
+				<a href="#">Политика</a><span>/</span>       
+				<a href="#">Общество</a><span>/</span>          
+				<a href="#">Экономика</a><span>/</span>          
+				<a href="#">В мире</a><span>/</span>          
+				<a href="#">Проишествия</a><span>/</span>          
+				<a href="#">Спорт</a><span>/</span>           
+				<a href="#">Наука</a><span>/</span>          
+				<a href="#">Туризм</a>
+			</nav>
+		</div>
+	</div>
+	<div id="central-container">
+		<div class="fixed-container flex-container">
+			<aside id="column-left">
+				<div class="left_news">
+					<h2>Новости дня</h2>
+				<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				</div>
+				<div class="left_curse">
+					<h2>Курс валют</h2>
+					<span class="curse_EN"><b>USD ►</b></span><span class="curse_EN_info"><i>0.00</i></span>
+					<br><br>
+					<span class="curse_EU"><b>RUB ►</b></span><span class="curse_EU_info"><i>0.00</i></span>
+				</div>
+			</aside>
+			<main id="column-center">
+				<div class="main__news">
+					<a href="#" class="tegs">/ Политика</a>
+					<h1 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h1>
+					<span class="news_date">19 июня 2019 года</span><span class="news_time">10:48</span>
+				</div>
+				<div class="main__news_other">
+					<div class="newsOther__item">
+						<img src="img/Layer-3.jpg" alt="Новость" class="newsImage">
+						<h3 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h3>
+						<a href="#" class="tegs">/ Политика</a><span class="news_time">10:48</span><span class="news_coment">10</span>
+					</div>
+					<div class="newsOther__item">
+						<img src="img/Layer-4.jpg" alt="Новость" class="newsImage">
+						<h3 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h3>
+						<a href="#" class="tegs">/ Политика</a><span class="news_time">10:48</span><span class="news_coment">10</span>
+					</div>
+					<div class="newsOther__item">
+						<img src="img/Layer-5.jpg" alt="Новость" class="newsImage">
+						<h3 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h3>
+						<a href="#" class="tegs">/ Политика</a><span class="news_time">10:48</span><span class="news_coment">10</span>
+					</div>
+					<div class="newsOther__item">
+						<img src="img/Layer-6.jpg" alt="Новость" class="newsImage">
+						<h3 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h3>
+						<a href="#" class="tegs">/ Политика</a><span class="news_time">10:48</span><span class="news_coment">10</span>
+					</div>
+				</div>
+			</main>
+			<aside id="column-right">
+				<img src="img/banner-1.png" alt="Банер">
+				<img src="img/banner-2.png" alt="Банер">
+			</aside>
+		</div>
+		<div class="fixed-container">
+			<div id="special-news">
+				<div class="main__news">
+					<a href="#" class="tegs">/ Политика</a>
+					<h1 class="newsHeadline">В крыму отреагировали на слова Кравчука о возрасте полуострова</h1>
+					<span class="news_date">19 июня 2019 года</span><span class="news_time">10:48</span>
+					<p>Министерство коммерции Китая заявило, что Пекин примет «качественные»
+					и «количественные» меры, если президент США Дональд Трамп введет
+					дополнительные пошлины на китайские товары</p>
+				</div>
+				<aside class="bottom-news">
+					<h2>Самые читаемые новости</h2>
+					<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				<div class="news-item">
+					<div class="news-item-text">
+						Кот Ахилл предсказал победу российской сборной над Египтом на ЧМ-2019
+					</div>
+					<div class="news-item-props">
+						<a href="#">/ЧМ по футболу</a>
+						<div class="news-time">10:45</div>
+						<div class="news-comments-count">17</div>
+					</div>
+				</div>
+				</aside>
+			</div>
+		</div>
+		<footer>
+			<div class="fixed-container container_footer">
+				<div class="footer__item">
+					<a href="#">Главная</a>
+					<a href="#">Политика</a>
+					<a href="#">Общество</a>
+					<a href="#">Экономика</a>
+					<a href="#">В мире</a>
+				</div>
+				<div class="footer__item">
+					<a href="#">Путешествия</a>
+					<a href="#">Спорт</a>
+					<a href="#">Наука</a>
+					<a href="#">Туризм</a>
+				</div>
+				<div class="footer__item">
+					<a href="#"><img class="logo" src="img/logo_footer.png" alt="Логотип"></a>
+					<a href="#">Об огенстве</a>
+					<a href="#">Контакты</a>
+					<a href="#">Опубликовать новость</a>
+				</div>
+				<div class="footer__item">
+					<div class="socialIcons">
+						<div class="social__item"><a href=""><img src="img/vk.png" alt="Социал"></a></div>
+						<div class="social__item"><a href=""><img src="img/twitter.png" alt="социал"></a></div>
+						<div class="social__item"><a href=""><img src="img/facebook.png" alt="социал"></a></div>
+						<div class="social__item"><a href=""><img src="img/instagram.png" alt="социал"></a></div>
+					</div>
+					<div class="contact_number"><a href="#">+7 (499) 995-55-55</a></div>
+					<div class="contact_mail"><a href="#">info@agency.ru</a></div>
+				</div>
+			</div>
+		</footer>
+		<div class="footer__footer">
+				<p>© Новостное агентство, 2017-2018 все права защищены</p>
+		</div>
+	</div>
 </body>
 </html>
