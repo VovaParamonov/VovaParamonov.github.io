@@ -26,6 +26,7 @@ $(function(){
 	});
 
 	$menuButton.click(function(event) {
+		$(this).toggleClass('menu-cros');
 		$menu.toggleClass('menu-active');
 		$('body').toggleClass('body_fixed');	
 	});

@@ -437,11 +437,53 @@ footer .logo {
 	display: none;
 	width: 20px;
 	height: 20px;
-	background-image: url('img/menu-button.png');
+	/*background-image: url('img/menu-button.png');*/
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	position: relative;
+	transition: all. 0.4s;
 }
+
+.menu-cros {
+	transform-origin: center;
+}
+
+.menu-cros .burger-line_2 {
+	opacity: 0;
+}
+.menu-cros .burger-line_1, .menu-cros .burger-line_3{
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.menu-cros .burger-line_1 {
+	transform: rotate(45deg);
+}
+.menu-cros .burger-line_3 {
+	transform: rotate(-45deg);
+}
+
+
+.burger-line_1, .burger-line_2, .burger-line_3 {
+	transition: all 0.4s;
+	background-image: url('img/burger_line.png');
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	left: 0;
+}
+.burger-line_1 {
+	top: 0
+}
+.burger-line_2 {
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.burger-line_3 {
+	bottom: 0;
+}
+
 
 @media (max-width: 1000px) {
 	.menu-container .fixed-container {
