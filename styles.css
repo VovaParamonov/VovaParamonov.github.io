@@ -241,6 +241,7 @@ nav span{
 	background-image: url('img/search.png');
 	background-repeat: no-repeat;
 	background-position: 285px;
+	transition: all 0.2s;
 }
 
 .main__news {

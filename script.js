@@ -7,6 +7,7 @@ $(function(){
 	let $menuButton = $('.menu-button');
 	let $menu = $('.menu-container');
 	let $search = $('.search');
+	let $logo = $('#logo');
 
 	let data = $.get('http://data.fixer.io/api/latest', {access_key:'f3edbcdbd0288fb42075aa17d416607c'/*, base:"RUB"....Низя((*/},function(response){
 		console.log(response)
@@ -14,6 +15,14 @@ $(function(){
 			$curse_EN.text(response['rates']['USD']);
 			$curse_EU.text(response['rates']['RUB']);
 		}
+	});
+
+	$search.focus(function(){
+		$logo.hide();
+		$(this).css({'width':'200px', "background-position":"94% 50%"});
+	}).focusout(function(event) {
+		$(this).css({'width':'45px', "background-position":"center"});
+		$logo.show()
 	});
 
 	$menuButton.click(function(event) {
