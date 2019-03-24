@@ -16,8 +16,8 @@
         <div class="container flex-content">
             <div class="social flex-content">
                 <a href="#" class="social__whatsapp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="social__instagtam"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social__vk"><i class="fab fa-vk"></i></a>
+                <a href="https://www.instagram.com/parammonoff/" target="_blank" class="social__instagtam"><i class="fab fa-instagram"></i></a>
+                <a href="https://vk.com/parammonoff_mebel" target="_blank" class="social__vk"><i class="fab fa-vk"></i></a>
             </div>
             <div class="contact-info flex-content">
                 <div class="contact-info__mail-info">
@@ -37,57 +37,61 @@
             </div>
             <ul class="header__menu flex-content">
                 <li><a href="#">Главная</a></li>
-                <li><a href="#">Каталог</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#recall">Отзывы</a></li>
             </ul>
-            <div class="call-button">
+            <a class="call-button" href="#call">
                 <p><i class="fas fa-phone"></i> Перезвоните мне</p>
-            </div>
+            </a>
         </div>
     </header>
     <section class="section-slider">
         <div class="container">
             <div class="top-block"></div>
             <div class="bottom-block"></div>
-            <div class="main-slider">
-                <div>
-                    <div class="slider-card slider-card-1">
-                        <div class="slider-card__platform">
-                            <h2>Стиль</h2>
-                            <p>
-                                Мы сделаем все, чтобы удивить вас и
-                                ваших гостей
-                            </p>
+            <div class="slider-wrapper">
+                <div class="main-slider">
+                    <div>
+                        <div class="slider-card slider-card-1">
+                            <div class="slider-card__platform">
+                                <h2>Стиль</h2>
+                                <p>
+                                    Мы сделаем все, чтобы удивить вас и
+                                    ваших гостей
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slider-card slider-card-2">
+                            <div class="slider-card__platform">
+                                <h2>Опыт</h2>
+                                <p>
+                                    Огромный опыт работы с самыми
+                                    разными проектами позволит нам
+                                    воплотить в жизнь ваши самые
+                                    оригинальные идеи
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slider-card slider-card-3">
+                            <div class="slider-card__platform">
+                                <h2>Надежность</h2>
+                                <p>
+                                    Качество нашей продукции - то,
+                                    чем мы гордимся.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="slider-card slider-card-2">
-                        <div class="slider-card__platform">
-                            <h2>Опыт</h2>
-                            <p>
-                                Огромный опыт работы с самыми
-                                разными проектами позволит нам
-                                воплотить в жизнь ваши самые
-                                оригинальные идеи
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="slider-card slider-card-3">
-                        <div class="slider-card__platform">
-                            <h2>Надежность</h2>
-                            <p>
-                                Качество нашей продукции - то,
-                                чем мы гордимся.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <div class="slider-arrows"></div>
             </div>
-            <div class="slider-arrows"></div>
+
+
         </div>
     </section>
     <section class="section-1">
@@ -120,7 +124,7 @@
             </div>
         </div>
     </section>
-    <section class="section-2 section-catalog" data-type="background" data-speed="5">
+    <section class="section-2 section-catalog" data-type="background" data-speed="5" name="#catalog">
         <div class="container">
             <h1>Каталог мебели</h1>
             <div class="catalog-cards flex-content">
@@ -157,7 +161,7 @@
             </div>
         </div>
     </section>
-    <section class="section-3 section-information ">
+    <section class="section-3 section-information" name="#call">
         <div class="container clearfix">
             <div class="information">
                 <p>
@@ -174,8 +178,8 @@
         </div>
     </section>
     <section class="section-4 section-templates">
-        <section class="section-templates__section-1" data-aos="fade-right" data-aos-duration="700">
-            <div class="big-image"><i class="fas fa-hand-point-up"></i></div>
+        <section class="section-templates__section-1 section-templates__section" data-aos="fade-right" data-aos-duration="700">
+            <div class="big-image hover-effect"><i class="fas fa-hand-point-up"></i></div>
             <div class="section-templates__content">
                 <h3>Кухня из дуба</h3>
                 <p>
@@ -187,8 +191,8 @@
                 </p>
             </div>
         </section>
-        <section class="section-templates__section-2" data-aos="fade-left" data-aos-duration="700">
-            <div class="big-image"><i class="fas fa-hand-point-up"></i></div>
+        <section class="section-templates__section-2 section-templates__section" data-aos="fade-left" data-aos-duration="700">
+            <div class="big-image hover-effect"><i class="fas fa-hand-point-up"></i></div>
             <div class="section-templates__content">
                 <h3>Тумба из ежа</h3>
                 <p>
@@ -199,8 +203,8 @@
                 </p>
             </div>
         </section>
-        <section class="section-templates__section-3" data-aos="fade-right" data-aos-duration="700">
-            <div class="big-image"><i class="fas fa-hand-point-up"></i></div>
+        <section class="section-templates__section-3 section-templates__section" data-aos="fade-right" data-aos-duration="700">
+            <div class="big-image hover-effect"><i class="fas fa-hand-point-up"></i></div>
             <div class="section-templates__content">
                 <h3>Кровать Desambo</h3>
                 <p>
@@ -213,7 +217,7 @@
             </div>
         </section>
     </section>
-    <section class="section-5 section-recall">
+    <section class="section-5 section-recall" name="#recall">
         <div class="container">
             <h1>Отзывы</h1>
             <div class="recalls">
@@ -243,7 +247,7 @@
             </div>
         </div>
     </section>
-    <footer>
+    <footer name="#contacts">
         <div class="container">
             <div class="footer-logo">
                 <div class="logo">
@@ -259,7 +263,7 @@
             <div class="footer-cell-form">
                 <input type="text" placeholder="8 (800) 00-00-00">
                 <div class="call-button">
-                    <p>Перезвоните мне</p>
+                    <p><i class="fas fa-phone"></i> Перезвоните мне</p>
                 </div>
             </div>
             <div class="footer-contact">
@@ -271,8 +275,8 @@
                 </div>
                 <div class="social flex-content">
                     <a href="#" class="social__whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social__instagtam"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social__vk"><i class="fab fa-vk"></i></a>
+                    <a href="https://www.instagram.com/parammonoff/" target="_blank" class="social__instagtam"><i class="fab fa-instagram"></i></a>
+                    <a href="https://vk.com/parammonoff_mebel" class="social__vk" target="_blank"><i class="fab fa-vk"></i></a>
                 </div>
             </div>
         </div>
