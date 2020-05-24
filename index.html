@@ -1,52 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900&display=swap&subset=cyrillic" rel="stylesheet">
-    <title>Webpack starter</title>
-<link href="main.css" rel="stylesheet"></head>
+    <link rel="shortcut icon" href="images/090014081f5866500232329c667b74b3.png" type="image/x-icon">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>Output Management</title>
+<link href="index.css" rel="stylesheet"></head>
 <body>
-<!--<button class="btn&#45;&#45;test">Закончить игру</button>-->
-    <div class="global_wrapper">
-        <div class="canvasWrapper">
-            <button class="btn--secret"></button>
-            <div class="block-ended close">
-                <h1>Победа!</h1>
-                <button class="btn--replay">Начать заново</button>
-            </div>
-            <div class="block-info close">
-                <h2>Управление</h2>
-                <div class="block-info__section section--controls" >
-                    <div class="section--controls__control">
-                        <h3>Первый игрок</h3>
-                        <img src="images/infro_player1d4ca3e061f021065067281bde3a481c1.png" alt="">
-                    </div>
-                    <div class="section--controls__control">
-                        <h3>Второй игрок</h3>
-                        <img src="images/infro_player2b4317da06deaad23df70fb1c225fa357.png" alt="">
-                    </div>
-                </div>
-                <h2>Основная информация</h2>
-                <p>
-                    Не попадайтесь на ловушки и призракам на глаза. Вам нужно собрать все монеты, не растеряв при этом все жизни.
-                    Вся необходимая информация отображается на интерфейсе справа. Удачи!
-                </p>
-            </div>
-            <canvas id="canvas" width="920" height="680"></canvas>
-        </div>
-        <div class="interface">
-            <button class="button--info"></button>
-            <h1 class="interface__title">SuperPacman</h1>
-            <label class="rocker rocker-small">
-                <input class="game-level_switcher" type="checkbox" checked>
-                <span class="switch-left">Easy</span>
-                <span class="switch-right">Hard</span>
-            </label>
-            <div class="live_interface"></div>
-            <button class="interface__save_button button--save">Сохранить</button>
-            <button class="interface__load_button button--load">Загрузить</button>
+    <div class="pre_loader">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
         </div>
     </div>
-<script type="text/javascript" src="bundle.js"></script></body>
+    <button class="language-button mode-ru">language <span></span></button>
+    <header>
+        <section class="section">
+            <div class="header__decor-medium hide decor-medium-first"></div>
+            <div class="header__decor-medium hide decor-medium-second"></div>
+            <div class="header__decor-small hide decor-small-first"></div>
+            <div class="header__decor-small  hide decor-small-second"></div>
+            <div class="header__back-light hide "></div>
+            <div class="header__back-ellipse_wrapper"><div class="header__back-ellipse"></div></div>
+            <div class="header__decor-main hide">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" data-lang-id="nav-about">Обо мне</a>
+                        </li>
+                        <li>
+                            <a href="#" data-lang-id="nav-skills">Навыки</a>
+                        </li>
+                        <li>
+                            <button data-lang-id="nav-contact">Связаться</button>
+                        </li>
+                        <li>
+                            <a href="#" data-lang-id="nav-works">Работы</a>
+                        </li>
+                        <li>
+                            <a href="#" data-lang-id="nav-home">Домой</a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="header__title" data-lang-id="header">f</p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="section section-works clearfix">
+<!--            <div class="section-works__description">-->
+<!--                <h1 class="description__title" data-lang-id="works-description__title">Описание</h1>-->
+<!--                <p class="description__text" data-lang-id="works-description__text-default">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dignissimos eligendi et explicabo fugiat hic inventore libero non, numquam possimus provident quo tempore voluptatibus voluptatum?</p>-->
+<!--                <a href="#" data-lang-id="works-description__view">Показать ></a>-->
+<!--            </div>-->
+            <div class="section-works__gallery_wrapper">
+                <ul class="section-works__gallery">
+                    <li class="section-works__item work_item1">
+                        <div class="section-works__item_wrapper">
+<!--                            <div class="work_item__desktop"></div>-->
+<!--                            <div class="work_item__tablet"></div>-->
+<!--                            <div class="work_item__phone"></div>-->
+                            <img class="work_item__desktop" src="images/b018de4beaf9b7a4cfcb51f0576dc67a.png" alt="">
+                            <img class="work_item__tablet" src="images/bb481321fe537b24aca9f516cad73431.png" alt="">
+                            <img class="work_item__phone" src="images/d8283b607d2dc9094e04c20861007095.png" alt="">
+                        </div>
+
+                    </li>
+                    <li class="section-works__item work_item2">
+                        <div class="section-works__item_wrapper">
+                            <img class="work_item__desktop" src="images/c0af27405c1b98cc7ad9cf35aa8286a3.png" alt="">
+                            <img class="work_item__tablet" src="images/e4cfa23dee4235cc42c95b468ae74875.png" alt="">
+                            <img class="work_item__phone" src="images/078980d5ed57ad34caa1d6ba23a6214a.png" alt="">
+                        </div>
+
+                    </li>
+                    <li class="section-works__item work_item3">
+                        <div class="section-works__item_wrapper">
+                            <img class="work_item__desktop" src="images/7e2495edf9b71ab54585246081499a82.png" alt="">
+                            <img class="work_item__tablet" src="images/0f0e0418e68664eac9173ced211f63e6.png" alt="">
+                            <img class="work_item__phone" src="images/1eb6069505fe22b8d97e173875e952d2.png" alt="">
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section section-about clearfix">
+            <div class="triangle-top-right"></div>
+            <div class="triangle-bottom-left"></div>
+            <div class="triangle-bottom-left"></div>
+            <div class="triangle-bottom-left"></div>
+            <div class="triangle-bottom-left"></div>
+            <div class="about-me-content">
+                <h1 class="about-me-content__title" data-lang-id="about-me__title">Обо мне</h1>
+                <p class="about-me-content__text" data-lang-id="about-me__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti dolores, est eveniet iste iure iusto nostrum omnis quae, quis rem sapiente temporibus velit voluptas voluptatum. Accusamus nemo suscipit voluptas.</p>
+            </div>
+        </section>
+        (
+        <section class="section section-skills">
+
+            <div class="skills-items">
+                <div class="skill-item"></div>
+                <div class="skill-item"></div>
+                <div class="skill-item"></div>
+                <div class="skill-item worked">
+                    <img src="images/67871bbe05b4c97e93f4bcbafb5a587d.png" alt="skill" class="skill-item1__img">
+                </div>
+                <div class="skill-item"></div>
+                <div class="skill-item"></div>
+                <div class="skill-item worked">
+                    <img src="images/2ef40cac5bf4536c189a0636ecaf8085.png" alt="skill" class="skill-item2__img">
+                </div>
+                <div class="skill-item worked">
+                    <img src="images/69f8e1f6a2367aed6d2100b77eb5ead0.png" alt="skill" class="skill-item3__img">
+                </div>
+                <div class="skill-item"></div>
+                <div class="skill-item worked">
+                    <img src="images/eea8ea61159cb34c1ccc1c8c7b74547a.png" alt="skill" class="skill-item4__img">
+                </div>
+                <div class="skill-item worked">
+                    <img src="images/229a157939237147ef6b0cd0487079d7.png" alt="skill" class="skill-item5__img">
+                </div>
+                <div class="skill-item worked">
+                    <img src="images/df13431987d12038839a609db31f8592.png" alt="skill" class="skill-item6__img">
+                </div>
+                <div class="skill-item"></div>
+                <div class="skill-item worked">
+                    <img src="images/00cbba2e71acd26f6903b63ba2a2fbdb.png" alt="skill" class="skill-item7__img">
+                </div>
+                <div class="skill-item worked">
+                    <img src="images/80f636d199e55b88c60e662630c1cd85.png" alt="skill" class="skill-item8__img">
+                </div>
+                <div class="skill-item"></div>
+            </div>
+            <div class="skills-description">
+                <h1 data-lang-id="skill-description__title-default">Description title</h1>
+                <h5 data-lang-id="skill-description__sub-title-default">(Description sub title)</h5>
+                <p data-lang-id="skill-description__text-default">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eveniet natus odit perferendis ratione, veritatis.</p>
+            </div>
+        </section>
+        <section class="section section-form">
+            <form action="" class="form-message">
+                <input type="text" class="form-message__input-name" placeholder="" data-lang-id="form-name">
+                <div class="form-message__contact-info-wrapper">
+                    <input type="text" class="form-message__input-phone" placeholder="" data-lang-id="form-phone">
+                    <input type="text" class="form-message__input-email" placeholder="" data-lang-id="form-email">
+                </div>
+                <textarea name="message" id="message-area" cols="30" rows="1" class="form-message__textarea" placeholder="" data-lang-id="form-textarea">
+
+                </textarea>
+                <div class="form-message__end-block-wrapper">
+                    <input type="checkbox" id="form-message__checkbox">
+                    <label for="form-message__checkbox" data-lang-id="form-accept">I consent to the processing of my personal data</label>
+                    <button class="form-message__button" data-lang-id="form-submit"></button>
+                </div>
+            </form>
+        </section>
+        <dib class="footer-backlight"></dib>
+    </main>
+    <footer class="footer">
+        <img src="images/c121d5bdbcd9070280c90fe0b4461ecb.png" alt="" class="logo">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" data-lang-id="nav-about">Обо мне</a>
+                </li>
+                <li>
+                    <a href="#" data-lang-id="nav-skills">Навыки</a>
+                </li>
+                <li>
+                    <a href="#" data-lang-id="nav-works">Работы</a>
+                </li>
+                <li>
+                    <a href="#" data-lang-id="nav-home">Домой</a>
+                </li>
+            </ul>
+        </nav>
+        <span class="copyright">&#169; Copyright 2019, Paramonov Vladimir</span>
+        <div class="social-icons">
+            <ul>
+                <li class="social-icons__item1">
+                    <a href="#"><img src="images/2a312897e605465906189a94bdf68be4.png" alt="vk"></a>
+                </li>
+                <li class="social-icons__item2">
+                    <a href="#"><img src="images/57ac3a290770d603158fe4c76aa302c3.png" alt="facebook"></a>
+                </li>
+                <li class="social-icons__item3">
+                    <a href="#"><img src="images/1cdd551390c8c910b7aeb6b4af60e0d8.png" alt="insta"></a>
+                </li>
+                <li class="social-icons__item4">
+                    <a href="#"><img src="images/dc5f39faf11771bdc98bdeb65203b7ae.png" alt="linked"></a>
+                </li>
+                <li class="social-icons__item5">
+                    <a href="#"><img src="images/85c34912f969bf830f9edf9e85d823c3.png" alt="github"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+<script type="text/javascript" src="main.js"></script></body>
 </html>
