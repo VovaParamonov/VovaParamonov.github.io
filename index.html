@@ -1,1 +1,79 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.07001985.js"></script><link href="/static/css/main.4b64c1a4.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Успешная авторизация</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #383838;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #121212;
+            padding: 24px 16px;
+            border-radius: 15px;
+            color: white;
+            max-width: 300px;
+        }
+        .container .image {
+            border-radius: 10px;
+            overflow: hidden;
+            width: 60px;
+            margin-bottom: 20px;
+        }
+        .container h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .container p {
+            font-size: 14px;
+            color: #b0b0b0;
+            margin: 10px 0 20px 0;
+        }
+        .container button {
+            background-color: #e10918;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #e6392d;
+        }
+    </style>
+    <script>
+        function redirectWithParams() {
+            const currentParams = new URLSearchParams(window.location.search);
+            const targetUrl = 'https://app.taptattoo.ru/yandex-auth';
+            window.location.href = `${targetUrl}?${currentParams.toString()}`;
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <!--  <div class="image">-->
+    <svg class="image" width="60" height="60" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M530.135 4.76837e-05L-0.000488281 3.05176e-05L-0.000289917 1024H1024V570.83C942.511 654.477 850.586 739.769 761.24 808.407C693.039 860.801 624.11 905.237 560.951 931.206C500.134 956.212 431.548 969.415 374.676 937.511C325.864 910.129 297.795 869.3 286.777 821.256C276.328 775.692 281.741 726.274 292.792 679.06C303.961 631.342 322.06 581.226 340.981 532.776C348.616 513.228 356.244 494.282 363.732 475.686L363.734 475.681L363.772 475.587C366.292 469.328 368.797 463.108 371.28 456.919C321.213 459.034 278.091 455.213 241.818 446.779C182.366 432.956 134.052 404.754 110.364 361.736C84.5964 314.943 94.9448 263.549 128.4 225.44C189.352 156.009 288.11 167.642 356.127 202.425C409.882 229.915 461.227 279.192 482.637 343.274C537.466 332.267 600.376 314.684 671.71 288.582L505.507 227.391C480.481 218.177 467.257 190.789 475.605 165.461L530.135 4.76837e-05ZM1024 426.557V0L634.346 4.76837e-05L584.571 151.031L826.023 239.927C844.945 246.893 857.748 264.644 858.387 284.798C859.026 304.952 847.373 323.479 828.929 331.63C694.742 390.935 579.478 426.502 482.728 444.014C473.806 467.276 464.152 491.273 454.647 514.9L454.646 514.902C447.262 533.257 439.967 551.39 433.174 568.782C414.584 616.383 398.649 661.084 389.162 701.616C379.558 742.65 377.694 774.915 383.248 799.132C388.233 820.87 399.447 837.923 423.099 851.191C438.69 859.938 469.497 861.794 523.313 839.667C574.786 818.503 635.728 780.02 700.943 729.92C812.494 644.223 930.037 529.633 1024 426.557ZM311.063 290.545C342.018 306.376 366.946 330.15 381.15 357.265C332.83 360.459 294.011 357.3 264.233 350.376C219.097 339.882 201.861 322.708 197.063 313.995C194.344 309.057 192.572 302.364 202.78 290.736C219.143 272.097 259.397 264.124 311.063 290.545Z" fill="#EECB70"/>
+    </svg>
+    <!--  </div>-->
+    <h1>Успешная авторизация</h1>
+    <p>Перейдите в приложение для завершения авторизации</p>
+    <button onclick="redirectWithParams()">Продолжить в приложении</button>
+</div>
+</body>
+</html>
+
+
+
