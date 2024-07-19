@@ -67,14 +67,12 @@
             border-radius: 50px;
             cursor: pointer;
         }
-        .container button:hover {
-            background-color: #e6392d;
-        }
     </style>
     <script>
         function redirectWithParams() {
             const currentParams = new URLSearchParams(window.location.search);
-            const targetUrl = 'https://app.taptattoo.ru/yandex-auth';
+            // const targetUrl = 'https://app.taptattoo.ru/yandex-auth';
+            const targetUrl = 'taptattoo://yandex-auth';
             window.location.href = `${targetUrl}?${currentParams.toString()}`;
         }
     </script>
